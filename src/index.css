@@ -6,6 +6,8 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  --primary-color: #3498db; /* Example Primary Color */
+  --secondary-color: #2c3e50; /* Example Secondary Color */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,8 +30,10 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: 'Open Sans', sans-serif; /* Example Font */
+  color: var(--primary-color); /* Use a color variable */
+  /* Define other base styles as needed */
 }
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -53,6 +57,23 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+/* Add this to your global.css or a component-specific CSS file */
+.iframe-container {
+  overflow: hidden;
+  padding-top: 50%; /* 16:9 Aspect Ratio */
+  position: relative;
+}
+
+.iframe-container iframe {
+  border: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
