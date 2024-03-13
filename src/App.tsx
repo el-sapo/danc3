@@ -1,15 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import { Button, CssBaseline, ThemeProvider } from "@mui/material";
 import { appTheme } from "./themes/theme";
 import SoundXYZIframe from './SoundXYZIframe';
+import GridItem from './GridItem';
+import './styles/GridStyles.css';
+
+interface Song {
+  cover: string;
+  artist: string;
+  title: string;
+}
+
+const appStyle = {
+  backgroundColor: '#000000', // Replace with your desired background color or image
+  color: '#ffffff', // Replace with your text color
+  minHeight: '100vh', // Ensure it covers the full height of the viewport
+  // Add other styles as needed
+};
 
 function App() {
   const [count, setCount] = useState(0)
 
+  const [items, setItems] = useState<Song[]>([]);
+
+  useEffect(() => {
+    fetch('/songs.json')
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      } else {
+        console.log(response);
+        return response.json();
+      }
+    })
+      .then((data: Song[]) => setItems(data))
+      .catch((error) => console.error("Error loading JSON:", error));
+  }, []);
+
   return (
+    <div style={appStyle}>
+
     <ThemeProvider theme={appTheme}>
       <CssBaseline enableColorScheme />
     <>
@@ -24,29 +55,19 @@ function App() {
       <div>
         <SoundXYZIframe />
       </div>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className="grid-container">
+      {items.map((item, index) => (
+        <GridItem 
+          key={index} 
+          imageUrl={item.cover} 
+          labelTop={item.artist} 
+          labelBottom={item.title} 
+        />
+      ))}
+    </div>
     </>
-        </ThemeProvider>
-
+   </ThemeProvider>
+   </div>
   )
 }
 

@@ -5,6 +5,12 @@
   text-align: center;
 }
 
+.appBackground {
+  background: #000; /* Replace with your desired background color or image */
+  color: #ffffff; /* Replace with your text color */
+  min-height: 100vh; /* Ensure it covers the full height of the viewport */
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

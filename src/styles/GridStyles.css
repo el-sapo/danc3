@@ -1,0 +1,24 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust size as needed */
+    gap: 16px; /* Adjust space between items as needed */
+  }
+  
+  .grid-item {
+    border: 1px solid #ccc; /* Border color as needed */
+    border-radius: 8px; /* Adjust border-radius as needed */
+    overflow: hidden;
+  }
+  
+  .grid-item .label-top,
+  .grid-item .label-bottom {
+    padding: 8px; /* Adjust padding as needed */
+    background-color: #f3f3f3; /* Background color as needed */
+    text-align: center;
+  }
+  
+  .grid-item img {
+    width: 100%;
+    display: block; /* Removes bottom space/margin */
+  }
+  
