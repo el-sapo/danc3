@@ -4,7 +4,7 @@ import App from './App.tsx'
 import './index.css'
 
 import { WagmiProvider, createConfig } from 'wagmi';
-import { mainnet, optimism, sepolia } from 'wagmi/chains'; // add base
+import { sepolia } from 'wagmi/chains'; // add base
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ConnectKitProvider, getDefaultConfig, ConnectKitButton } from 'connectkit';
 

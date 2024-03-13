@@ -17,7 +17,6 @@ const GridItem: React.FC<GridItemProps> = ({
   label1,
   label2,
   label3,
-  label4
 }) => {
   return (
     <div className="grid-item">
