@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
-import { Button, CssBaseline, ThemeProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import { appTheme } from "./themes/theme";
 import SoundXYZIframe from './SoundXYZIframe';
 import GridItem from './GridItem';
