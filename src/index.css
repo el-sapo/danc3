@@ -43,9 +43,10 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  font-family: 'Open Sans', sans-serif; /* Example Font */
+  font-family: 'Gotham-Medium', sans-serif; /* Example Font */
   color: var(--primary-color); /* Use a color variable */
   /* Define other base styles as needed */
+  background-color: #000
 }
 h1 {
   font-size: 3.2em;

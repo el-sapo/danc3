@@ -23,11 +23,17 @@ const GridItem: React.FC<GridItemProps> = ({
     <div className="grid-item">
       <img src={mainImage} alt="Main" className="main-image" />
       <div className="sidebar">
+      <div className="top-aligned-items">
+
         <div className="label">{label1}</div>
         <div className="label-line">
           <img src={smallImage1} alt="Small 1" className="small-image" />
           <div className="label-small">by {label2}</div>
         </div>
+        </div>
+        <div className="spacer"></div>
+
+        <div className="bottom-aligned-items">
         <div className="label-line top-collector">
           <div className="label-small">Top collector</div>
           <img src={smallImage2} alt="Small 2" className="small-image" />
@@ -35,6 +41,8 @@ const GridItem: React.FC<GridItemProps> = ({
         <div className="flex-right">
           <div className="label-small">released {label3}</div>
         </div>
+        </div>
+
       </div>
     </div>
   );
