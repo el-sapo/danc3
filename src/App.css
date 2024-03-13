@@ -43,6 +43,7 @@
   justify-content: center; /* Center the images horizontally */
   align-items: center; /* Align images vertically in the middle */
   height: 60px; /* Desired fixed height for both images */
+  width: 100%; /* Make images fill the container width */
 }
 
 .image-container img {
@@ -51,4 +52,22 @@
   object-fit: scale-down; /* Scale down to fit without losing aspect ratio */
   padding-left: 40px;
   padding-right: 40px;
+}
+
+/* Adjust to 2 columns when the screen width is 600px or less */
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sound-container {
+    width: 90%; 
+    height: 200px; 
+  }
+}
+
+/* Adjust to 1 column when the screen width is 400px or less */
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
