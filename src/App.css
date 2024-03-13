@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: #000;
 }
 
 .sound-container {
@@ -18,6 +19,7 @@
   width: 900px; 
   height: 300px; 
   position: relative;
+  margin: 0 auto;
 }
 
 .iframe-container iframe {
@@ -32,6 +34,21 @@
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
-  gap: 10px; /* Space between grid items */
+  gap: 20px; /* Space between grid items */
   justify-content: center; /* Center grid items if there's extra space in the row */
+}
+
+.image-container {
+  display: flex;
+  justify-content: center; /* Center the images horizontally */
+  align-items: center; /* Align images vertically in the middle */
+  height: 60px; /* Desired fixed height for both images */
+}
+
+.image-container img {
+  height: 100%; /* Make images fill the container height */
+  width: auto; /* Allow images to adjust their width */
+  object-fit: scale-down; /* Scale down to fit without losing aspect ratio */
+  padding-left: 40px;
+  padding-right: 40px;
 }

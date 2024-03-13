@@ -5,6 +5,8 @@ import { appTheme } from "./themes/theme";
 import SoundXYZIframe from './SoundXYZIframe';
 import GridItem from './GridItem';
 import './styles/GridStyles.css';
+import danc3Logo from './assets/danc3-logo.png';
+import tribesLogo from './assets/musictribes-tight.png';
 
 interface Song {
   artist: string;
@@ -46,15 +48,11 @@ function App() {
     <ThemeProvider theme={appTheme}>
       <CssBaseline enableColorScheme />
     <>
-    <div style={{ margin: "1em" }}>
-        <Button color="primary" variant="contained">
-          Primary
-        </Button>
-        <Button color="secondary" variant="contained">
-          Secondary
-        </Button>
+      <div className="image-container">
+        <img src={danc3Logo} alt="Danc3" />
+        <img src={tribesLogo} alt="MT" />
       </div>
-      <div>
+      <div style={{padding: "20px"}}>
         <SoundXYZIframe />
       </div>
       <div className="grid-container">
