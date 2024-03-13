@@ -15,6 +15,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url('/fonts/Gotham-Medium.otf') format('otf'),
+       url('/fonts/Gotham-Medium.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Then use the custom font in your classes */
+.label {
+  font-family: 'Gotham-Medium', sans-serif;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -57,23 +70,6 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-/* Add this to your global.css or a component-specific CSS file */
-.iframe-container {
-  overflow: hidden;
-  padding-top: 50%; /* 16:9 Aspect Ratio */
-  position: relative;
-}
-
-.iframe-container iframe {
-  border: none;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
 
 @media (prefers-color-scheme: light) {
   :root {

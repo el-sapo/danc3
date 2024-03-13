@@ -1,24 +1,82 @@
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust size as needed */
-    gap: 16px; /* Adjust space between items as needed */
-  }
-  
-  .grid-item {
-    border: 1px solid #ccc; /* Border color as needed */
-    border-radius: 8px; /* Adjust border-radius as needed */
-    overflow: hidden;
-  }
-  
-  .grid-item .label-top,
-  .grid-item .label-bottom {
-    padding: 8px; /* Adjust padding as needed */
-    background-color: #f3f3f3; /* Background color as needed */
-    text-align: center;
-  }
-  
-  .grid-item img {
-    width: 100%;
-    display: block; /* Removes bottom space/margin */
-  }
-  
+
+.grid-item {
+  display: flex;
+  width: 400px; 
+  height: 200px; 
+  border: 1px solid #ccc; 
+  margin: 0px;
+  overflow: hidden; 
+  background-color: #f3f3f3; 
+}
+
+.main-image {
+  width: 50%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* Distribute space around items */
+  align-items: center;
+  width: 50%;
+  height: 100%; 
+}
+
+.label {
+  width: 90%; 
+  background-color: #f3f3f3; 
+  text-align: left;
+  margin: 2px 0; 
+  color: #000; 
+  font-size: 15px;
+}
+
+.label-small {
+  width: 90%; 
+  background-color: #f3f3f3; 
+  text-align: left;
+  margin: 2px 0;
+  color: #000; 
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+
+.small-image {
+  border-radius: 50%;
+  width: 40px; 
+  height: 40px;
+  object-fit: cover; 
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+/* New styles for aligning label 2 and smallImage1, and top collector label and smallImage2 */
+.label-line {
+  display: flex;
+  width: 100%;
+}
+
+.label-line .label-small {
+  margin: 0;
+}
+
+.top-collector {
+  justify-content: flex-end;
+}
+
+.label-small,
+.top-collector {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.flex-right {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}

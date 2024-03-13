@@ -7,9 +7,13 @@ import GridItem from './GridItem';
 import './styles/GridStyles.css';
 
 interface Song {
-  cover: string;
   artist: string;
+  avatar: string;
   title: string;
+  cover: string;
+  order: string;
+  date: string;
+  top_minter: string;
 }
 
 const appStyle = {
@@ -20,8 +24,6 @@ const appStyle = {
 };
 
 function App() {
-  const [count, setCount] = useState(0)
-
   const [items, setItems] = useState<Song[]>([]);
 
   useEffect(() => {
@@ -56,12 +58,16 @@ function App() {
         <SoundXYZIframe />
       </div>
       <div className="grid-container">
-      {items.map((item, index) => (
-        <GridItem 
-          key={index} 
-          imageUrl={item.cover} 
-          labelTop={item.artist} 
-          labelBottom={item.title} 
+      {items.map(item => (
+        <GridItem
+          key={item.order} // Make sure each item has a unique identifier
+          mainImage={item.cover}
+          smallImage1={item.avatar}
+          smallImage2={item.top_minter}
+          label1={item.title}
+          label2={item.artist}
+          label3={item.date}
+          label4={"Top minter:"}
         />
       ))}
     </div>
