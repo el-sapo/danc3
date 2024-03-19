@@ -53,7 +53,7 @@ function App() {
         <img src={tribesLogo} alt="MT" />
       </div>
       <div style={{padding: "20px"}}>
-        <SoundXYZIframe />
+        <SoundXYZIframe("https://embed.sound.xyz/v1/release/796a1542-8fe7-437a-88b7-cebdcad91421") />
       </div>
       <div className="grid-container">
       {items.map(item => (
