@@ -51,6 +51,16 @@ function GridAndRoutes() {
 
   return (
     <>
+      <div className="fixed-grid-container" style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+        {items.map(item => (
+          <Link to={`/artist/${item.artist}`} key={item.artist}>
+            <div className="fixed-grid-item">
+              <img src={item.avatar} alt={item.artist} width="60" height="60" style={{ borderRadius: "50%" }} />
+            </div>
+          </Link>
+        ))}
+      </div>
+
       <CSSTransition in={showGrid} timeout={300} classNames="fade" unmountOnExit>
         <div className="grid-container">
           {items.map(item => (
@@ -73,7 +83,7 @@ function GridAndRoutes() {
         <Route path="/artist/:artist" element={<ArtistHome />} />
       </Routes>
     </>
-  );
+  ); 
 }
 
 function App() {
