@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArtistData, SongData } from './types'; // Import the missing type
 import ArtistProfile from './ArtistProfile';
+import WrittenPosts from './WrittenPosts';
 import SongPreview from './SongPreview';
 import { useParams } from 'react-router-dom';
 
@@ -9,6 +10,7 @@ const ArtistHome: React.FC = () => {
   
     const [artistData, setArtistData] = useState<ArtistData | null>(null);
     const [songData, setSongData] = useState<SongData | null>(null);
+    const [postsData, setPostsData] = useState<string[]>([]);
 
     const fetchData = async () => {
         try {
@@ -30,9 +32,12 @@ const ArtistHome: React.FC = () => {
               playLink: ''
           };
     
+          const postsData = ['This is a post', 'This is another post']; //data.posts;
+
           // Update the state with the parsed data
           setArtistData(artistData);
           setSongData(songData);
+          setPostsData(postsData);
         } catch (error) {
           // Handle the error
         }
@@ -46,6 +51,7 @@ const ArtistHome: React.FC = () => {
         <div>
             {artistData && <ArtistProfile {...artistData} />}
             {songData && <SongPreview {...songData} />}
+            {postsData && <WrittenPosts posts={postsData} />}
         </div>
     );
 };
