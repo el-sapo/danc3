@@ -1,5 +1,5 @@
 import React from 'react';
-import { SongData } from '../types';
+import { SongData } from './types';
 
 
 interface SongPreviewProps extends SongData {}

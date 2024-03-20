@@ -2,8 +2,12 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { appTheme } from "./themes/theme";
+import { BrowserRouter as Router, Route, Link, Routes, useLocation } from 'react-router-dom';
+
 import SoundXYZIframe from './SoundXYZIframe';
 import GridItem from './GridItem';
+import ArtistHome from './artist/ArtistHome'; // Adjust the path as necessary
+
 import './styles/GridStyles.css';
 import danc3Logo from './assets/danc3-logo.png';
 import tribesLogo from './assets/musictribes-tight.png';
@@ -25,9 +29,11 @@ const appStyle = {
   // Add other styles as needed
 };
 
-function App() {
+function GridAndRoutes() {
   const [items, setItems] = useState<Song[]>([]);
-
+  const location = useLocation();
+  const showGrid = location.pathname === "/";
+  
   useEffect(() => {
     fetch('/songs.json')
     .then((response) => {
@@ -41,8 +47,38 @@ function App() {
       .then((data: Song[]) => setItems(data))
       .catch((error) => console.error("Error loading JSON:", error));
   }, []);
+  
+  return (
+    <>
+      {showGrid && (
+        <div className="grid-container">
+          {items.map(item => (
+            <Link to={`/artist/${item.artist}`} key={item.artist}>
+              <GridItem
+                key={item.order} // Make sure each item has a unique identifier
+                mainImage={item.cover}
+                smallImage1={item.avatar}
+                smallImage2={item.top_minter}
+                label1={item.title}
+                label2={item.artist}
+                label3={item.date}
+                label4={"Top minter:"}
+              />
+            </Link>
+          ))}
+        </div>
+      )}
+      <Routes>
+        <Route path="/artist/:artist" element={<ArtistHome />} />
+      </Routes>
+    </>
+  );
+}
+
+function App() {
 
   return (
+    <Router>
     <div style={appStyle}>
 
     <ThemeProvider theme={appTheme}>
@@ -53,25 +89,16 @@ function App() {
         <img src={tribesLogo} alt="MT" />
       </div>
       <div style={{padding: "20px"}}>
-        <SoundXYZIframe("https://embed.sound.xyz/v1/release/796a1542-8fe7-437a-88b7-cebdcad91421") />
+        <SoundXYZIframe src="https://embed.sound.xyz/v1/release/796a1542-8fe7-437a-88b7-cebdcad91421?referral=0x54c3283577c40eaa637d35106b7c5c6b387c5ab0&referral_source=embed-sound" />
       </div>
-      <div className="grid-container">
-      {items.map(item => (
-        <GridItem
-          key={item.order} // Make sure each item has a unique identifier
-          mainImage={item.cover}
-          smallImage1={item.avatar}
-          smallImage2={item.top_minter}
-          label1={item.title}
-          label2={item.artist}
-          label3={item.date}
-          label4={"Top minter:"}
-        />
-      ))}
-    </div>
+      <GridAndRoutes />
     </>
    </ThemeProvider>
    </div>
+   <Routes>
+        <Route path="/artist/:param1" element={<ArtistHome />} />
+      </Routes>
+    </Router>
   )
 }
 
