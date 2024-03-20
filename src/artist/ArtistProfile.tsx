@@ -5,19 +5,20 @@ interface ArtistProfileProps extends ArtistData {}
 
 // links: twitter, insta, soundcloud, spotify, youtube, website, farcaster, lens, sound, catalog
 
-const ArtistProfile: React.FC<ArtistProfileProps> = ({ imageUrl, links }) => {
-    return (
-        <div>
-            <img src={imageUrl} alt="Danc3 Artist" />
-            <div>
-              {links.map((link, index) => (
-                <a key={index} href={link.url} target="_blank" rel="noopener noreferrer">
-                  <img src={link.iconUrl} alt={link.altText} width="50" height="50" />
-                </a>
-              ))}
-            </div>
-        </div>
-    );
+const ArtistProfile: React.FC<ArtistProfileProps> = ({ name, imageUrl, links }) => {
+  return (
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <img src={imageUrl} alt="Danc3 Artist" style={{ borderRadius: '50%', width: '120px', height: '120px' }} />
+          <h1>{name}</h1>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '20px' }}>
+            {links.map((link, index) => (
+              <a key={index} href={link.url} target="_blank" rel="noopener noreferrer">
+                <img src={link.iconUrl} alt={link.altText} style={{ width: '50px', height: '50px' }} />
+              </a>
+            ))}
+          </div>
+      </div>
+  );
 };
 
 export default ArtistProfile;

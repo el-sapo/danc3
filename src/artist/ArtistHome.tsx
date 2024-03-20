@@ -17,9 +17,9 @@ const ArtistHome: React.FC = () => {
     
           // Parse the data into ArtistData and SongData
           const artistData: ArtistData = {
-              imageUrl: 'https://www.sound.xyz/_next/image?url=https%3A%2F%2Fd2i9ybouka0ieh.cloudfront.net%2Fartist-uploads%2Fb8ddfb21-88a7-401e-a99a-061e1291c291%2FAVATAR_IMAGE%2F4944886-newImage.png&w=256&q=75', //data.artist.imageUrl,
+            name: 'George Hooks',
+            imageUrl: 'https://www.sound.xyz/_next/image?url=https%3A%2F%2Fd2i9ybouka0ieh.cloudfront.net%2Fartist-uploads%2Fb8ddfb21-88a7-401e-a99a-061e1291c291%2FAVATAR_IMAGE%2F4944886-newImage.png&w=256&q=75', //data.artist.imageUrl,
               links: [],//data.artist.links,
-              name: 'George Hooks'
           };
     
           const songData: SongData = {
@@ -44,7 +44,6 @@ const ArtistHome: React.FC = () => {
     
     return (
         <div>
-            <h1>Artist Home</h1>
             {artistData && <ArtistProfile {...artistData} />}
             {songData && <SongPreview {...songData} />}
         </div>
