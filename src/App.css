@@ -54,6 +54,24 @@
   padding-right: 40px;
 }
 
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
 /* Adjust to 2 columns when the screen width is 600px or less 
 @media (max-width: 900px) {
   .grid-container {
