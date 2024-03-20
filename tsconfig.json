@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "artist-home/src/ArtistHome.tsx", "artist-home/src/ArtistProfile.tsx", "artist-home/src/SongPreview.tsx", "artist-home/src/TImelineGrid.tsx", "artist-home/src/types.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

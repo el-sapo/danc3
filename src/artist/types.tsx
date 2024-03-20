@@ -17,4 +17,5 @@ export interface SongData {
     title: string;
     description: string;
     collectLink: string;
+    playLink: string;
 }

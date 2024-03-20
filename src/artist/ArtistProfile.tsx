@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArtistData } from '../types'; // Import the missing ArtistData interface
+import { ArtistData } from './types'; // Import the missing ArtistData interface
 
 interface ArtistProfileProps extends ArtistData {}
 
