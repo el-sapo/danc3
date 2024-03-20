@@ -96,9 +96,6 @@ function App() {
     </>
    </ThemeProvider>
    </div>
-   <Routes>
-        <Route path="/artist/:param1" element={<ArtistHome />} />
-      </Routes>
     </Router>
   )
 }
