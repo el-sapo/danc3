@@ -3,6 +3,7 @@ import './App.css'
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { appTheme } from "./themes/theme";
 import { BrowserRouter as Router, Route, Link, Routes, useLocation } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group'
 
 import SoundXYZIframe from './SoundXYZIframe';
 import GridItem from './GridItem';
@@ -47,10 +48,10 @@ function GridAndRoutes() {
       .then((data: Song[]) => setItems(data))
       .catch((error) => console.error("Error loading JSON:", error));
   }, []);
-  
+
   return (
     <>
-      {showGrid && (
+      <CSSTransition in={showGrid} timeout={300} classNames="fade" unmountOnExit>
         <div className="grid-container">
           {items.map(item => (
             <Link to={`/artist/${item.artist}`} key={item.artist}>
@@ -67,7 +68,7 @@ function GridAndRoutes() {
             </Link>
           ))}
         </div>
-      )}
+      </CSSTransition>
       <Routes>
         <Route path="/artist/:artist" element={<ArtistHome />} />
       </Routes>
