@@ -35,7 +35,8 @@ const ArtistHome: React.FC = () => {
             collectLink: 'https://www.sound.xyz/iamgeorgehooks/love-me', //data.song.collectLink,
             title: 'Love Me', // data.song.title
             playLink: '',
-            releaseDate: ''
+            releaseDate: '',
+            type: ''
           };
     
           const postsData = ['This is a post', 'This is another post']; //data.posts;
