@@ -4,7 +4,7 @@ import { SongData } from './types';
 
 interface SongPreviewProps extends SongData {}
 
-const SongPreview: React.FC<SongPreviewProps> = ({ imageUrl, title, description, collectLink, playLink }) => {
+const SongPreview: React.FC<SongPreviewProps> = ({ imageUrl, title, description, collectLink }) => {
   return (
     <div style={{ width: '900px' }}>
     <div style={{ display: 'flex', alignItems: 'start' }}>
