@@ -1,0 +1,52 @@
+/* TimelineGrid.css */
+.timeline-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust as needed */
+    gap: 0px; /* Space between grid items */
+    padding: 0px;
+}  
+
+/* TimelineGridItem.css */
+.timeline-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc; /* For illustration */
+    padding: 0px;
+    position: relative;
+  }
+  
+  .timeline-label {
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+  }
+  
+  .timeline {
+    position: relative;
+    width: 100%;
+  }
+  
+  .line {
+    height: 2px;
+    background-color: black;
+    width: 100%;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    top: -4px; /* Adjust this value so it centers on the line's height */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .event-image {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+  

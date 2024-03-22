@@ -10,6 +10,8 @@ export interface ArtistData {
     name: string;
     imageUrl: string;
     links: Link[];
+    posts: string[];
+    songs: SongData[];
 }
 
 export interface SongData {
@@ -18,4 +20,6 @@ export interface SongData {
     description: string;
     collectLink: string;
     playLink: string;
+    releaseDate: string;
+    type: string;
 }

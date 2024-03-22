@@ -3,7 +3,9 @@ import { createTheme } from "@mui/material/styles";
  
 export const appTheme = createTheme({
   palette: {
-    primary: blue,
-    secondary: red
+    primary: {
+      main: "#e16da4",
+    },
+    secondary: red,
   },
 });
