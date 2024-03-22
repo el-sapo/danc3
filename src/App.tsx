@@ -12,6 +12,7 @@ import ArtistHome from './artist/ArtistHome'; // Adjust the path as necessary
 import './styles/GridStyles.css';
 import danc3Logo from './assets/danc3-logo.png';
 import tribesLogo from './assets/musictribes-tight.png';
+import React from 'react';
 
 interface Song {
   artist: string;
@@ -51,7 +52,7 @@ function GridAndRoutes() {
 
   return (
     <>
-      <div className="fixed-grid-container" style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+      <div className="fixed-grid-container">
         {items.map(item => (
           <Link to={`/artist/${item.artist}`} key={item.artist}>
             <div className="fixed-grid-item">

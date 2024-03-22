@@ -38,6 +38,15 @@
   justify-content: center; /* Center grid items if there's extra space in the row */
 }
 
+
+.fixed-grid-container {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
 .image-container {
   display: flex;
   justify-content: center; /* Center the images horizontally */
