@@ -4,7 +4,7 @@ import { ArtistData, SongData } from './types'; // Import the missing type
 import ArtistProfile from './ArtistProfile';
 import WrittenPosts from './WrittenPosts';
 import SongPreview from './SongPreview';
-import TimelineGrid from './TimelineGrid';
+import TimelineGrid from './Timeline';
 
 
 const ArtistHome: React.FC = () => {

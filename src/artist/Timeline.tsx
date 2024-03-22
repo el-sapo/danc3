@@ -1,8 +1,8 @@
 // GridItem.tsx
-import useTheme from '@mui/material/styles/useTheme';
-import './TimelineGrid.css';
+import './Timeline.css';
 import { SongData } from './types';
 import { appTheme } from '../themes/theme';
+import React from 'react';
 
 interface TimelineGridItemProps extends SongData {}
 
