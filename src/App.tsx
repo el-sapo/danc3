@@ -12,7 +12,6 @@ import ArtistHome from './artist/ArtistHome'; // Adjust the path as necessary
 import './styles/GridStyles.css';
 import danc3Logo from './assets/danc3-logo.png';
 import tribesLogo from './assets/musictribes-tight.png';
-import React from 'react';
 
 interface Song {
   artist: string;
