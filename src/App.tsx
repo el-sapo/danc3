@@ -23,6 +23,7 @@ const appStyle = {
 
 function GridAndRoutes() {
   const [items, setItems] = useState<Song[]>([]);
+//  const [selectedIndex, setSelectedIndex] = useState(null);
   const location = useLocation();
   const showGrid = location.pathname === "/";
   
@@ -42,6 +43,9 @@ function GridAndRoutes() {
 
   return (
     <>
+      <label style={{ fontSize: '20px', color: appTheme.palette.primary.main }}>
+        Meet the artists behind the songs
+      </label>
       <div className="fixed-grid-container">
         {items.map(item => (
           <Link to={`/artist/${item.artist}`} key={item.artist}>
