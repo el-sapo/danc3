@@ -4,7 +4,7 @@ import soundLogo from '../assets/sound.png';
 import catalogLogo from '../assets/catalog.png';
 import lensLogo from '../assets/lens.png';
 
-interface ArtistProfileProps extends ArtistData {
+interface ArtistProfileProps {
   artist: ArtistData;
   song: Song | null;
 }

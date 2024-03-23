@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { ArtistData, Song } from './types'; // Import the missing type
+import { ArtistData, Song, SongData } from './types'; // Import the missing type
 import ArtistProfile from './ArtistProfile';
 import TimelineGrid from './Timeline';
 
