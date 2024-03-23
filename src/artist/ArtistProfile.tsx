@@ -5,7 +5,7 @@ interface ArtistProfileProps extends ArtistData {}
 
 // links: twitter, insta, soundcloud, spotify, youtube, website, farcaster, lens, sound, catalog
 
-const ArtistProfile: React.FC<ArtistProfileProps> = ({ name, imageUrl, links }) => {
+const ArtistProfile: React.FC<ArtistProfileProps> = ({ name, links }) => {
   return (
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <h1>{name}</h1>

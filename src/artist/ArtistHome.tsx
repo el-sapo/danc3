@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { ArtistData, SongData } from './types'; // Import the missing type
 import ArtistProfile from './ArtistProfile';
 import WrittenPosts from './WrittenPosts';
-import SongPreview from './SongPreview';
 import TimelineGrid from './Timeline';
 
 
@@ -11,7 +10,7 @@ const ArtistHome: React.FC = () => {
   const { artist } = useParams();
   
     const [artistData, setArtistData] = useState<ArtistData | null>(null);
-    const [songData, setSongData] = useState<SongData | null>(null);
+   // const [songData, setSongData] = useState<SongData | null>(null);
     const [postsData, setPostsData] = useState<string[]>([]);
     const [gridData, setGridData] = useState<SongData[]>([]);
 
@@ -52,7 +51,7 @@ const ArtistHome: React.FC = () => {
             }),
             type: track.type
           }));
-    
+    /*
           const songData: SongData = {
             imageUrl: 'https://www.sound.xyz/_next/image?url=https%3A%2F%2Fd2i9ybouka0ieh.cloudfront.net%2Fartist-uploads%2Fb8ddfb21-88a7-401e-a99a-061e1291c291%2FRELEASE_COVER_IMAGE%2F1812817-newImage.png&w=750&q=75', //data.song.imageUrl,
             description: 'This track is very interesting for me because of the experiments that were put into it.  I wanted to make a track with a little vocal sample. But I don\'t have a microphone and I don\'t have a good singing voice. To realize this idea I involved my wife with an iPhone and an open messenger telegram. After a few minutes of experimentation, I got the result you\'ll hear in this track :)', //data.song.description,
@@ -62,7 +61,7 @@ const ArtistHome: React.FC = () => {
             releaseDate: '',
             type: ''
           };
-    
+    */
           const postsData = ['This is a post', 'This is another post']; //data.posts;
 
           // Update the state with the parsed data
@@ -82,7 +81,6 @@ const ArtistHome: React.FC = () => {
     return (
         <div>
             {artistData && <ArtistProfile {...artistData} />}
-            {songData && <SongPreview {...songData} />}
             {postsData && <WrittenPosts posts={postsData} />}
             {gridData && <TimelineGrid events={gridData} />} {/* Render the grid with fetched data */}
         </div>

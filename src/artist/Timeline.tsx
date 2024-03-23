@@ -25,7 +25,7 @@ const TimelineGridItem: React.FC<TimelineGridItemProps> = ({ imageUrl, title, re
 
 
 
-const TimelineGrid = ({ events }: { events: SongData[] }) => {
+export const TimelineGrid = ({ events }: { events: SongData[] }) => {
     return (
         <div className="timeline-grid-container">
             {events.map(event => (
