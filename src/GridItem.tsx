@@ -10,6 +10,15 @@ interface GridItemProps {
   label4: string;
 }
 
+function formatDate(date: string): string {
+  new Date(date).toLocaleDateString('en-US', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric'
+  });
+  return date
+}
+
 const GridItem: React.FC<GridItemProps> = ({
   mainImage,
   smallImage1,
@@ -38,7 +47,7 @@ const GridItem: React.FC<GridItemProps> = ({
           <img src={smallImage2} alt="Small 2" className="small-image" />
         </div>
         <div className="flex-right">
-          <div className="label-small">released {label3}</div>
+          <div className="label-small">released {formatDate(label3)}</div>
         </div>
         </div>
 

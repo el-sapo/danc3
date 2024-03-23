@@ -8,7 +8,7 @@ import TimelineGrid from './Timeline';
 
 
 const ArtistHome: React.FC = () => {
-    const { param1 } = useParams<{ param1: string }>();
+  const { artist } = useParams();
   
     const [artistData, setArtistData] = useState<ArtistData | null>(null);
     const [songData, setSongData] = useState<SongData | null>(null);
@@ -17,17 +17,41 @@ const ArtistHome: React.FC = () => {
 
     const fetchData = async () => {
         try {
-          //const response = await fetch(`https://musicgm.xyz/api/artist-path?param1=${param1}`);
-          //const data = await response.json();
-    
+          const response = await fetch(`https://musicgm.xyz/danc3/artist-path?artistId=${artist}`);
+          //const response = await fetch(`http://localhost:4000/danc3/artist-path?artistId=${artist}`);
+          const data = await response.json();
+          
+
           // Parse the data into ArtistData and SongData
           const artistData: ArtistData = {
-            name: 'George Hooks',
-            imageUrl: 'https://www.sound.xyz/_next/image?url=https%3A%2F%2Fd2i9ybouka0ieh.cloudfront.net%2Fartist-uploads%2Fb8ddfb21-88a7-401e-a99a-061e1291c291%2FAVATAR_IMAGE%2F4944886-newImage.png&w=256&q=75', //data.artist.imageUrl,
-            links: [],
-            posts: [],
-            songs: []
+            name: data.artist.name,
+            imageUrl: data.artist.imageUrl,
+            links: data.artist.links,
+            posts: data.artist.posts,
+            songs: data.tracks.map((track: any) => ({
+              imageUrl: track.imageUrl,
+              description: track.description,
+              collectLink: track.collectLink,
+              title: track.title,
+              playLink: track.playLink,
+              releaseDate: track.releaseDate,
+              type: track.type
+            }))
           };
+
+          const path = data.tracks.map((track: any) => ({
+            imageUrl: track.imageUrl,
+            description: track.description,
+            collectLink: track.collectLink,
+            title: track.title,
+            playLink: track.playLink,
+            releaseDate: new Date(track.releaseDate).toLocaleDateString('en-US', {
+              day: 'numeric',
+              month: 'short',
+              year: 'numeric'
+            }),
+            type: track.type
+          }));
     
           const songData: SongData = {
             imageUrl: 'https://www.sound.xyz/_next/image?url=https%3A%2F%2Fd2i9ybouka0ieh.cloudfront.net%2Fartist-uploads%2Fb8ddfb21-88a7-401e-a99a-061e1291c291%2FRELEASE_COVER_IMAGE%2F1812817-newImage.png&w=750&q=75', //data.song.imageUrl,
@@ -43,47 +67,9 @@ const ArtistHome: React.FC = () => {
 
           // Update the state with the parsed data
           setArtistData(artistData);
-          setSongData(songData);
+          //setSongData(songData);
           setPostsData(postsData);
-          const events: SongData[] = [
-            {
-              imageUrl: 'https://www.sound.xyz/_next/image?url=https%3A%2F%2Fd2i9ybouka0ieh.cloudfront.net%2Fartist-uploads%2Fb8ddfb21-88a7-401e-a99a-061e1291c291%2FRELEASE_COVER_IMAGE%2F1812817-newImage.png&w=750&q=75',
-              title: 'DRIVE ME MAD.',
-              description: '',
-              collectLink: '',
-              playLink: '',
-              releaseDate: '8 Jan 2024',
-              type: '' // Add the missing 'type' property
-            },
-            {
-              imageUrl: 'https://www.sound.xyz/_next/image?url=https%3A%2F%2Fd2i9ybouka0ieh.cloudfront.net%2Fartist-uploads%2Fb8ddfb21-88a7-401e-a99a-061e1291c291%2FRELEASE_COVER_IMAGE%2F1812817-newImage.png&w=750&q=75',
-              title: 'Butterflies (with Georgie O’Brien)',
-              description: '',
-              collectLink: '',
-              playLink: '',
-              releaseDate: '13 Nov 2023',
-              type: '' // Add the missing 'type' property
-            },
-            {
-              imageUrl: 'https://www.sound.xyz/_next/image?url=https%3A%2F%2Fd2i9ybouka0ieh.cloudfront.net%2Fartist-uploads%2Fb8ddfb21-88a7-401e-a99a-061e1291c291%2FRELEASE_COVER_IMAGE%2F1812817-newImage.png&w=750&q=75',
-              title: 'DRIVE ME MAD.',
-              description: '',
-              collectLink: '',
-              playLink: '',
-              releaseDate: '8 Jan 2024',
-              type: '' // Add the missing 'type' property
-            },
-            {
-              imageUrl: 'https://www.sound.xyz/_next/image?url=https%3A%2F%2Fd2i9ybouka0ieh.cloudfront.net%2Fartist-uploads%2Fb8ddfb21-88a7-401e-a99a-061e1291c291%2FRELEASE_COVER_IMAGE%2F1812817-newImage.png&w=750&q=75',
-              title: 'Butterflies (with Georgie O’Brien)',
-              description: '',
-              collectLink: '',
-              playLink: '',
-              releaseDate: '13 Nov 2023',
-              type: '' // Add the missing 'type' property
-            },
-          ];
-          setGridData(events);
+          setGridData(path);
         } catch (error) {
           // Handle the error
         }
@@ -91,7 +77,7 @@ const ArtistHome: React.FC = () => {
 
     useEffect(() => {
         fetchData();
-      }, [param1]);
+      }, [artist]);
     
     return (
         <div>
