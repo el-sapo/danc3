@@ -14,25 +14,6 @@ const ArtistHome: React.FC = () => {
     const [gridData, setGridData] = useState<SongData[]>([]);
     const [song, setSong] = useState<Song | null>(null);
 
-    useEffect(() => {
-      fetch('/songs.json')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        } else {
-          console.log(response);
-          return response.json();
-        }
-      })
-        .then((data: Song[]) => {
-          data.forEach((song: Song) => {
-        if (song.artist === artist) {
-          setSong(song);
-        }
-          });
-        })
-        .catch((error) => console.error("Error loading JSON:", error));
-    }, []);
     /*
     const songData: SongData = {
       imageUrl: 'https://www.sound.xyz/_next/image?url=https%3A%2F%2Fd2i9ybouka0ieh.cloudfront.net%2Fartist-uploads%2Fb8ddfb21-88a7-401e-a99a-061e1291c291%2FRELEASE_COVER_IMAGE%2F1812817-newImage.png&w=750&q=75', //data.song.imageUrl,
@@ -108,6 +89,26 @@ const ArtistHome: React.FC = () => {
         fetchData();
       }, [artist]);
     
+      useEffect(() => {
+        fetch('/songs.json')
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          } else {
+            console.log(response);
+            return response.json();
+          }
+        })
+          .then((data: Song[]) => {
+            data.forEach((song: Song) => {
+          if (song.artist === artist) {
+            setSong(song);
+          }
+            });
+          })
+          .catch((error) => console.error("Error loading JSON:", error));
+      }, [artist]);
+
     return (
       <div>
         {artistData && <ArtistProfile artist={artistData} song={song} />}
