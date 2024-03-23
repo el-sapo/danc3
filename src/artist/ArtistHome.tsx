@@ -27,8 +27,8 @@ const ArtistHome: React.FC = () => {
 
     const fetchData = async () => {
         try {
-          //const response = await fetch(`https://musicgm.xyz/danc3/artist-path?artistId=${artist}`);
-          const response = await fetch(`http://localhost:4000/danc3/artist-path?artistId=${artist}`);
+          const response = await fetch(`https://musicgm.xyz/danc3/artist-path?artistId=${artist}`);
+          //const response = await fetch(`http://localhost:4000/danc3/artist-path?artistId=${artist}`);
           const data = await response.json();
           
 
