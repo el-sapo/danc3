@@ -12,16 +12,7 @@ import ArtistHome from './artist/ArtistHome'; // Adjust the path as necessary
 import './styles/GridStyles.css';
 import danc3Logo from './assets/danc3-logo.png';
 import tribesLogo from './assets/musictribes-tight.png';
-
-interface Song {
-  artist: string;
-  avatar: string;
-  title: string;
-  cover: string;
-  order: string;
-  date: string;
-  top_minter: string;
-}
+import { Song } from './artist/types';
 
 const appStyle = {
   backgroundColor: '#000000', // Replace with your desired background color or image
@@ -67,19 +58,20 @@ function GridAndRoutes() {
             <Link to={`/artist/${item.artist}`} key={item.artist}>
               <GridItem
                 key={item.order} // Make sure each item has a unique identifier
-                mainImage={item.cover}
-                smallImage1={item.avatar}
-                smallImage2={item.top_minter}
-                label1={item.title}
-                label2={item.artist}
-                label3={item.date}
-                label4={"Top minter:"}
-              />
+                artist={item.artist}
+                avatar={item.avatar}
+                title={item.title}
+                cover={item.cover}
+                date={item.date}
+                top_minter={item.top_minter} 
+                description={''} 
+                order={''}              />
             </Link>
           ))}
         </div>
       </CSSTransition>
       <Routes>
+        
         <Route path="/artist/:artist" element={<ArtistHome />} />
       </Routes>
     </>

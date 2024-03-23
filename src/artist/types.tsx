@@ -1,9 +1,8 @@
 // types.ts
 
 export interface Link {
+    platformId: string;
     url: string;
-    iconUrl: string;
-    altText: string;
 }
 
 export interface ArtistData {
@@ -23,3 +22,14 @@ export interface SongData {
     releaseDate: string;
     type: string;
 }
+
+export interface Song {
+    artist: string;
+    avatar: string;
+    title: string;
+    description: string;
+    cover: string;
+    order: string;
+    date: string;
+    top_minter: string;
+  }

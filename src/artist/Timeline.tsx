@@ -6,10 +6,10 @@ import React from 'react';
 
 interface TimelineGridItemProps extends SongData {}
 
+
 const TimelineGridItem: React.FC<TimelineGridItemProps> = ({ imageUrl, title, releaseDate }) => {
-      // Access the custom color from the theme
-    
-      const customColor = appTheme.palette.primary.main;
+    const customColor = appTheme.palette.primary.main;
+
     return (
         <div className="timeline-grid-item">
             <div className="timeline-label top-label" style={{ color: customColor }}>{releaseDate}</div>
@@ -22,8 +22,6 @@ const TimelineGridItem: React.FC<TimelineGridItemProps> = ({ imageUrl, title, re
         </div>
     );
 };
-
-
 
 export const TimelineGrid = ({ events }: { events: SongData[] }) => {
     return (

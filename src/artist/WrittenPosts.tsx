@@ -1,4 +1,9 @@
 import React from 'react';
+import './WrittenPosts.css';
+
+interface WrittenPostsProps {
+    posts: string[];
+}
 
 interface WrittenPostsProps {
     posts: string[];
@@ -6,36 +11,9 @@ interface WrittenPostsProps {
 
 const WrittenPosts: React.FC<WrittenPostsProps> = ({ posts }) => {
     return (
-        <div
-            style={{
-                width: '100%',
-                overflowX: 'auto',
-                borderRadius: '10px',
-                padding: '10px',
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'flex-start',
-            }}
-        >
+        <div className="written-posts-container">
             {posts.map((post, index) => (
-                <div
-                    key={index}
-                    style={{
-                        minWidth: '100px',
-                        maxWidth: '150px',
-                        height: '100px',
-                        borderRadius: '10px',
-                        backgroundColor: '#eaeaea',
-                        margin: '0 10px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        textAlign: 'center',
-                        whiteSpace: 'pre-wrap',
-                        wordWrap: 'break-word',
-                    }}
-                >
+                <div className="post" key={index}>
                     {post}
                 </div>
             ))}

@@ -1,14 +1,16 @@
 import React from 'react';
 
-interface GridItemProps {
-  mainImage: string; // URL of the main image
+import { Song } from './artist/types'; // Import the 'Song' interface
+
+interface GridItemProps extends Song { }
+/*  mainImage: string; // URL of the main image
   smallImage1: string; // URL of the first small circular image
   smallImage2: string; // URL of the second small circular image
   label1: string;
   label2: string;
   label3: string;
   label4: string;
-}
+}*/
 
 function formatDate(date: string): string {
   new Date(date).toLocaleDateString('en-US', {
@@ -20,23 +22,23 @@ function formatDate(date: string): string {
 }
 
 const GridItem: React.FC<GridItemProps> = ({
-  mainImage,
-  smallImage1,
-  smallImage2,
-  label1,
-  label2,
-  label3,
+  artist,
+  avatar,
+  title,
+  cover,
+  date,
+  top_minter,
 }) => {
   return (
     <div className="grid-item">
-      <img src={mainImage} alt="Main" className="main-image" />
+      <img src={cover} alt="Main" className="main-image" />
       <div className="sidebar">
       <div className="top-aligned-items">
 
-        <div className="label">{label1}</div>
+        <div className="label">{title}</div>
         <div className="label-line">
-          <img src={smallImage1} alt="Small 1" className="small-image" />
-          <div className="label-small">by {label2}</div>
+          <img src={avatar} alt="Small 1" className="small-image" />
+          <div className="label-small">by {artist}</div>
         </div>
         </div>
         <div className="spacer"></div>
@@ -44,10 +46,10 @@ const GridItem: React.FC<GridItemProps> = ({
         <div className="bottom-aligned-items">
         <div className="label-line top-collector">
           <div className="label-small">Top collector</div>
-          <img src={smallImage2} alt="Small 2" className="small-image" />
+          <img src={top_minter} alt="Small 2" className="small-image" />
         </div>
         <div className="flex-right">
-          <div className="label-small">released {formatDate(label3)}</div>
+          <div className="label-small">released {formatDate(date)}</div>
         </div>
         </div>
 

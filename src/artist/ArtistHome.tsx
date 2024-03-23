@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { ArtistData, SongData } from './types'; // Import the missing type
+import { ArtistData, Song, SongData } from './types'; // Import the missing type
 import ArtistProfile from './ArtistProfile';
-import WrittenPosts from './WrittenPosts';
 import TimelineGrid from './Timeline';
 
 
@@ -11,13 +10,44 @@ const ArtistHome: React.FC = () => {
   
     const [artistData, setArtistData] = useState<ArtistData | null>(null);
    // const [songData, setSongData] = useState<SongData | null>(null);
-    const [postsData, setPostsData] = useState<string[]>([]);
+  //  const [postsData, setPostsData] = useState<string[]>([]);
     const [gridData, setGridData] = useState<SongData[]>([]);
+    const [song, setSong] = useState<Song | null>(null);
+
+    useEffect(() => {
+      fetch('/songs.json')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        } else {
+          console.log(response);
+          return response.json();
+        }
+      })
+        .then((data: Song[]) => {
+          data.forEach((song: Song) => {
+        if (song.artist === artist) {
+          setSong(song);
+        }
+          });
+        })
+        .catch((error) => console.error("Error loading JSON:", error));
+    }, []);
+    
+    const songData: SongData = {
+      imageUrl: 'https://www.sound.xyz/_next/image?url=https%3A%2F%2Fd2i9ybouka0ieh.cloudfront.net%2Fartist-uploads%2Fb8ddfb21-88a7-401e-a99a-061e1291c291%2FRELEASE_COVER_IMAGE%2F1812817-newImage.png&w=750&q=75', //data.song.imageUrl,
+      description: 'This track is very interesting for me because of the experiments that were put into it.  I wanted to make a track with a little vocal sample. But I don\'t have a microphone and I don\'t have a good singing voice. To realize this idea I involved my wife with an iPhone and an open messenger telegram. After a few minutes of experimentation, I got the result you\'ll hear in this track :)', //data.song.description,
+      collectLink: 'https://www.sound.xyz/iamgeorgehooks/love-me', //data.song.collectLink,
+      title: 'Love Me', // data.song.title
+      playLink: '',
+      releaseDate: '',
+      type: ''
+    };
 
     const fetchData = async () => {
         try {
-          const response = await fetch(`https://musicgm.xyz/danc3/artist-path?artistId=${artist}`);
-          //const response = await fetch(`http://localhost:4000/danc3/artist-path?artistId=${artist}`);
+          //const response = await fetch(`https://musicgm.xyz/danc3/artist-path?artistId=${artist}`);
+          const response = await fetch(`http://localhost:4000/danc3/artist-path?artistId=${artist}`);
           const data = await response.json();
           
 
@@ -62,12 +92,12 @@ const ArtistHome: React.FC = () => {
             type: ''
           };
     */
-          const postsData = ['This is a post', 'This is another post']; //data.posts;
+        //  const postsData = ['This is a post', 'This is another post']; //data.posts;
 
           // Update the state with the parsed data
           setArtistData(artistData);
           //setSongData(songData);
-          setPostsData(postsData);
+          //setPostsData(postsData);
           setGridData(path);
         } catch (error) {
           // Handle the error
@@ -79,11 +109,10 @@ const ArtistHome: React.FC = () => {
       }, [artist]);
     
     return (
-        <div>
-            {artistData && <ArtistProfile {...artistData} />}
-            {postsData && <WrittenPosts posts={postsData} />}
-            {gridData && <TimelineGrid events={gridData} />} {/* Render the grid with fetched data */}
-        </div>
+      <div>
+        {artistData && <ArtistProfile artist={artistData} song={song} />}
+        {gridData && <TimelineGrid events={gridData} />} {/* Render the grid with fetched data */}
+      </div>
     );
 };
 

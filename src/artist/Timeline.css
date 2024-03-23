@@ -4,6 +4,7 @@
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust as needed */
     gap: 0px; /* Space between grid items */
     padding: 0px;
+    margin-top: 30px;
 }  
 
 /* TimelineGridItem.css */
