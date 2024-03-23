@@ -33,7 +33,7 @@ const ArtistHome: React.FC = () => {
         })
         .catch((error) => console.error("Error loading JSON:", error));
     }, []);
-    
+    /*
     const songData: SongData = {
       imageUrl: 'https://www.sound.xyz/_next/image?url=https%3A%2F%2Fd2i9ybouka0ieh.cloudfront.net%2Fartist-uploads%2Fb8ddfb21-88a7-401e-a99a-061e1291c291%2FRELEASE_COVER_IMAGE%2F1812817-newImage.png&w=750&q=75', //data.song.imageUrl,
       description: 'This track is very interesting for me because of the experiments that were put into it.  I wanted to make a track with a little vocal sample. But I don\'t have a microphone and I don\'t have a good singing voice. To realize this idea I involved my wife with an iPhone and an open messenger telegram. After a few minutes of experimentation, I got the result you\'ll hear in this track :)', //data.song.description,
@@ -42,7 +42,7 @@ const ArtistHome: React.FC = () => {
       playLink: '',
       releaseDate: '',
       type: ''
-    };
+    };*/
 
     const fetchData = async () => {
         try {
