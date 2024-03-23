@@ -6,7 +6,6 @@ import lensLogo from '../assets/lens.png';
 
 interface ArtistProfileProps extends ArtistData {
   artist: ArtistData;
-
   song: Song | null;
 }
 
