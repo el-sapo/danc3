@@ -8,7 +8,6 @@ interface ArtistProfileProps extends ArtistData {}
 const ArtistProfile: React.FC<ArtistProfileProps> = ({ name, imageUrl, links }) => {
   return (
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <img src={imageUrl} alt="Danc3 Artist" style={{ borderRadius: '50%', width: '120px', height: '120px' }} />
           <h1>{name}</h1>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '20px' }}>
             {links.map((link, index) => (
