@@ -92,7 +92,7 @@ function App() {
         <img src={tribesLogo} alt="MT" />
       </div>
       <div style={{padding: "20px"}}>
-        <SoundXYZIframe src="https://embed.sound.xyz/v1/release/796a1542-8fe7-437a-88b7-cebdcad91421?referral=0x54c3283577c40eaa637d35106b7c5c6b387c5ab0&referral_source=embed-sound" />
+        <SoundXYZIframe src="https://embed.sound.xyz/v1/release/3853a5b1-5b5f-4390-82c6-1337924dbbab" />
       </div>
       <GridAndRoutes />
     </>
