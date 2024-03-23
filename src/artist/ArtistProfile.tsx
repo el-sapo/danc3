@@ -56,7 +56,7 @@ const getImageFileName = (string: string): string => {
 const ArtistProfile: React.FC<ArtistProfileProps> = ({ artist, song }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '150px', width: 'auto',marginRight: '60px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '320px', width: 'auto',marginRight: '60px' }}>
           <h1>{artist.name}</h1>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '20px' }}>
             {artist.links.map((link, index) => (
