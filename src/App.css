@@ -60,16 +60,22 @@
   display: flex;
   justify-content: center; /* Center the images horizontally */
   align-items: center; /* Align images vertically in the middle */
-  height: 60px; /* Desired fixed height for both images */
-  width: 100%; /* Make images fill the container width */
+  height: 60px;
+  width: 100%; 
+  margin: 30px 0;
 }
 
 .image-container img {
-  height: 100%; /* Make images fill the container height */
+  height: 100%; 
   width: auto; /* Allow images to adjust their width */
   object-fit: scale-down; /* Scale down to fit without losing aspect ratio */
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.image-container h1 {
+  font-size: 16px;
+  margin: 0 30px;
 }
 
 .fade-enter {
@@ -116,4 +122,7 @@
     width: 90%; 
     height: 200px; 
   } 
+  .image-container h1 {
+    margin: 0 10px;
+  }
 }

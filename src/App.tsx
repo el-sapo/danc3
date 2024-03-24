@@ -90,8 +90,9 @@ function App() {
     <ThemeProvider theme={appTheme}>
       <CssBaseline enableColorScheme />
     <>
-      <div className="image-container" style={{marginTop: '30px', marginBottom: '30px' }}>
+      <div className="image-container">
         <img src={danc3Logo} alt="Danc3" />
+        <h1>x</h1>
         <img src={tribesLogo} alt="MT" />
       </div>
       <div style={{padding: "20px"}}>
