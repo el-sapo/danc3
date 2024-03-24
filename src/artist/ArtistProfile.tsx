@@ -3,6 +3,9 @@ import { ArtistData, Song } from './types'; // Import the missing ArtistData int
 import soundLogo from '../assets/sound.png';
 import catalogLogo from '../assets/catalog.png';
 import lensLogo from '../assets/lens.png';
+import zoraLogo from '../assets/zora.png';
+import superLogo from '../assets/supercollector.png';
+
 import './ArtistProfile.css';
 import '../index.css';
 
@@ -13,7 +16,7 @@ interface ArtistProfileProps {
 
 // links: twitter, insta, soundcloud, spotify, youtube, website, farcaster, lens, sound, catalog
 const getImageFileName = (string: string): string => {
-  let imageName = '';
+  let imageName = null;
 
   switch (string) {
     case 'twitter':
@@ -37,6 +40,9 @@ const getImageFileName = (string: string): string => {
     case 'farcaster':
       imageName = 'farcaster.png';
       break;
+    case 'supercollector-release':
+      imageName = superLogo;
+      break;
     case 'lens':
       imageName = lensLogo;
       break;
@@ -45,6 +51,9 @@ const getImageFileName = (string: string): string => {
       break;
     case 'catalog':
       imageName = catalogLogo;
+      break;
+    case 'zora':
+      imageName = zoraLogo;
       break;
     default:
       imageName = 'default.png';
@@ -61,11 +70,16 @@ const ArtistProfile: React.FC<ArtistProfileProps> = ({ artist, song }) => {
       <div className='artist-info'>
           <h1>{artist.name}</h1>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '10px'}}>
-            {artist.links.map((link, index) => (
-              <a key={index} href={link.url} target="_blank" rel="noopener noreferrer">
-                <img src={getImageFileName(link.platformId)} style={{ width: '50px', height: '50px' }} />
-              </a>
-            ))}
+            {artist.links.map((link, index) => {
+              if (link.url && !link.url.includes('decent')) {
+                return (
+                  <a key={index} href={link.url} target="_blank" rel="noopener noreferrer">
+                    <img src={getImageFileName(link.platformId)} style={{ width: '50px', height: '50px' }} />
+                  </a>
+                );
+              }
+              return null;
+            })}
           </div>
       </div>
       {song && (
