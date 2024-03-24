@@ -3,6 +3,8 @@ import { ArtistData, Song } from './types'; // Import the missing ArtistData int
 import soundLogo from '../assets/sound.png';
 import catalogLogo from '../assets/catalog.png';
 import lensLogo from '../assets/lens.png';
+import './ArtistProfile.css';
+import '../index.css';
 
 interface ArtistProfileProps {
   artist: ArtistData;
@@ -55,10 +57,10 @@ const getImageFileName = (string: string): string => {
 
 const ArtistProfile: React.FC<ArtistProfileProps> = ({ artist, song }) => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '320px', width: 'auto',marginRight: '60px' }}>
+    <div className='artist-profile'>
+      <div className='artist-info'>
           <h1>{artist.name}</h1>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '20px' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '10px'}}>
             {artist.links.map((link, index) => (
               <a key={index} href={link.url} target="_blank" rel="noopener noreferrer">
                 <img src={getImageFileName(link.platformId)} style={{ width: '50px', height: '50px' }} />
@@ -67,9 +69,9 @@ const ArtistProfile: React.FC<ArtistProfileProps> = ({ artist, song }) => {
           </div>
       </div>
       {song && (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'start', flex: '1' }}>
-          <label style={{ textAlign: 'left', fontSize: '24px' }}>{song.title}</label>
-          <label style={{ textAlign: 'left', fontSize: '14px' }}>{song.description}</label>
+        <div className='song-info'>
+          <h1 style={{ textAlign: 'left', fontSize: '24px' }}>{song.title}</h1>
+          <p style={{ textAlign: 'left', fontSize: '16px' }}>{song.description}</p>
         </div>
       )}
     </div>
