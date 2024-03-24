@@ -12,12 +12,12 @@ const TimelineGridItem: React.FC<TimelineGridItemProps> = ({ imageUrl, title, re
 
     return (
         <div className="timeline-grid-item">
-            <div className="timeline-label top-label" style={{ color: customColor }}>{releaseDate}</div>
+            <p className="timeline-label top-label" style={{ color: customColor }}>{releaseDate}</p>
             <div className="timeline">
                 <div className="line" style={{ backgroundColor: customColor }}></div>
                 <div className="dot" style={{ backgroundColor: customColor }}></div>
             </div>
-            <div className="timeline-label bottom-label" style={{ color: customColor }}>{title}</div>
+            <h1 className="timeline-label bottom-label" style={{ color: customColor }}>{title}</h1>
             <img src={imageUrl} alt="" className="event-image" />
         </div>
     );
