@@ -91,7 +91,7 @@ function App() {
     <ThemeProvider theme={appTheme}>
       <CssBaseline enableColorScheme />
     <>
-      <div className="image-container">
+      <div className="image-container" style={{marginTop: '30px', marginBottom: '30px' }}>
         <img src={danc3Logo} alt="Danc3" />
         <img src={tribesLogo} alt="MT" />
       </div>
