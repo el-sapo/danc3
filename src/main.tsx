@@ -123,7 +123,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             "--ck-recent-badge-border-radius": "32px"
         }}
         >
-        <ConnectKitButton />
+           <div style={{ marginLeft: '10px' }}>
+            <ConnectKitButton />
+          </div>
         <App />
         <Analytics />
         </ConnectKitProvider>
