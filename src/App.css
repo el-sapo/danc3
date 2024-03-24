@@ -44,11 +44,14 @@
 
 
 .fixed-grid-container {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  justify-content: space-between;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fixed-grid-item {
+  flex: 1 0 20%; /* This means the items will grow and shrink as needed, and the base width is 20% */
+  margin: 10px; /* Add some margin around items if you want */
 }
 
 .image-container {
@@ -110,11 +113,10 @@
 
   .fixed-grid-container {
     grid-template-columns: repeat(5, 1fr);
-  }   
-
-/*
-  .sound-container {
-    width: 80%; 
-    height: 150px; 
-  }*/
+  }  
+  
+  .fixed-grid-item {
+    flex: 1 0 40%; /* On smaller screens, the base width is 40% */
+    margin: 10px;
+  }
 }
