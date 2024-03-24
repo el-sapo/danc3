@@ -43,9 +43,9 @@ function GridAndRoutes() {
 
   return (
     <>
-      <label style={{ fontSize: '20px', color: appTheme.palette.primary.main }}>
+      <p style={{ color: appTheme.palette.primary.main}}>
         Meet the artists behind the songs
-      </label>
+      </p>
       <div className="fixed-grid-container">
         {items.map(item => (
           <Link to={`/artist/${item.artist}`} key={item.artist}>
@@ -55,7 +55,6 @@ function GridAndRoutes() {
           </Link>
         ))}
       </div>
-
       <CSSTransition in={showGrid} timeout={300} classNames="fade" unmountOnExit>
         <div className="grid-container">
           {items.map(item => (

@@ -48,11 +48,12 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  margin-top: 8px;
 }
 
 .fixed-grid-item {
   flex: 1 0 20%; /* This means the items will grow and shrink as needed, and the base width is 20% */
-  margin: 10px; /* Add some margin around items if you want */
+  margin: 0 10px;  /* Add some margin around items if you want */
 }
 
 .image-container {
@@ -102,7 +103,7 @@
   }
   .fixed-grid-item {
     flex: 1 0 20%; /* On smaller screens, the base width is 40% */
-    margin: 2px;
+    margin: 0 2px;
   }
 }
 

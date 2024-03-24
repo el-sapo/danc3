@@ -56,6 +56,12 @@ h1 {
   font-weight: 200;
 }
 
+p {
+  font-family: 'Gotham-Light', sans-serif;
+  font-size: '12px';
+  margin: 0px;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
