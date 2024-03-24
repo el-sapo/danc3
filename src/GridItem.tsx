@@ -1,6 +1,6 @@
 import React from 'react';
-
 import { Song } from './artist/types'; // Import the 'Song' interface
+import './index.css';
 
 interface GridItemProps extends Song { }
 /*  mainImage: string; // URL of the main image
@@ -35,21 +35,21 @@ const GridItem: React.FC<GridItemProps> = ({
       <div className="sidebar">
       <div className="top-aligned-items">
 
-        <div className="label">{title}</div>
+        <h1 className="label">{title}</h1>
         <div className="label-line">
           <img src={avatar} alt="Small 1" className="small-image" />
-          <div className="label-small">by {artist}</div>
+          <p className="label-small">by {artist}</p>
         </div>
         </div>
         <div className="spacer"></div>
 
         <div className="bottom-aligned-items">
         <div className="label-line top-collector">
-          <div className="label-small">Top collector</div>
+          <h1 className="label-small">Top collector</h1>
           <img src={top_minter} alt="Small 2" className="small-image" />
         </div>
         <div className="flex-right">
-          <div className="label-small">released {formatDate(date)}</div>
+          <p className="label-small">{formatDate(date)}</p>
         </div>
         </div>
 
