@@ -99,6 +99,10 @@
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
   }
+  .fixed-grid-item {
+    flex: 1 0 40%; /* On smaller screens, the base width is 40% */
+    margin: 5px;
+  }
 }
 
 @media (max-width: 580px) {
@@ -109,14 +113,5 @@
   .iframe-container {
     width: 90%; 
     height: 200px; 
-  }
-
-  .fixed-grid-container {
-    grid-template-columns: repeat(5, 1fr);
-  }  
-  
-  .fixed-grid-item {
-    flex: 1 0 40%; /* On smaller screens, the base width is 40% */
-    margin: 10px;
-  }
+  } 
 }
