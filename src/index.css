@@ -17,15 +17,33 @@
 
 @font-face {
   font-family: 'Gotham-Medium';
-  src: url('/fonts/Gotham-Medium.otf') format('otf'),
-       url('/fonts/Gotham-Medium.otf') format('otf');
+  src: url('/fonts/Gotham-Medium.otf') format('otf');
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham-Light';
+  src: url('/fonts/Gotham-Light.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham-XLightItalic';
+  src: url('/fonts/Gotham-XLightItalic.otf') format('otf');
+  font-weight: normal;
+  font-style: italic;
 }
 
 /* Then use the custom font in your classes */
 .label {
   font-family: 'Gotham-Medium', sans-serif;
+}
+
+.comment {
+  font-family: 'Gotham-XLightItalic', sans-serif;
+  font-size: 12px;
 }
 
 a {

@@ -43,7 +43,7 @@ function GridAndRoutes() {
   return (
     <>
       <p style={{ color: appTheme.palette.primary.main}}>
-        Meet the artists behind the songs
+        Meet the artists behind the songs. Click on an artist to learn more.
       </p>
       <div className="fixed-grid-container">
         {items.map(item => (
@@ -65,9 +65,10 @@ function GridAndRoutes() {
                 title={item.title}
                 cover={item.cover}
                 date={item.date}
-                top_minter={item.top_minter} 
-                description={''} 
-                order={''}              />
+                top_minter={item.top_minter}
+                description={''}
+                order={''} 
+                comment={item.comment}              />
             </Link>
           ))}
         </div>

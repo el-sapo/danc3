@@ -19,6 +19,7 @@ const GridItem: React.FC<GridItemProps> = ({
   cover,
   date,
   top_minter,
+  comment
 }) => {
   return (
     <div className="grid-item">
@@ -39,6 +40,11 @@ const GridItem: React.FC<GridItemProps> = ({
           <h1 className="label-small">Top collector</h1>
           <img src={top_minter} alt="Small 2" className="small-image" />
         </div>
+        {comment && (
+          <div style={{width: '100%', justifyContent: 'center' }}>
+            <p className="comment">"{comment}"</p>
+          </div>
+        )}
         <div className="flex-right">
           <p className="label-small">{formatDate(date)}</p>
         </div>

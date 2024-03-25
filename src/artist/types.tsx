@@ -32,4 +32,5 @@ export interface Song {
     order: string;
     date: string;
     top_minter: string;
+    comment: string;
   }

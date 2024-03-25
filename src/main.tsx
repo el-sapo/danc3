@@ -4,7 +4,7 @@ import App from './App.tsx'
 import './index.css'
 
 import { WagmiProvider, createConfig } from 'wagmi';
-import { sepolia } from 'wagmi/chains'; // add base
+import { mainnet } from 'wagmi/chains'; // add base
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ConnectKitProvider, getDefaultConfig, ConnectKitButton } from 'connectkit';
 import { Analytics } from "@vercel/analytics/react"
@@ -12,7 +12,7 @@ import { Analytics } from "@vercel/analytics/react"
 const config = createConfig(
   getDefaultConfig({
     appName: 'Danc3',
-    chains: [sepolia],
+    chains: [mainnet],
     walletConnectProjectId: import.meta.env.VITE_WALLET_CONNECT_PROJECT_ID,
   })
 );
