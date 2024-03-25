@@ -71,7 +71,7 @@ const ArtistProfile: React.FC<ArtistProfileProps> = ({ artist, song }) => {
           <h1>{artist.name}</h1>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '10px'}}>
             {artist.links.map((link, index) => {
-              if (link.url && !link.url.includes('decent')) {
+              if (link.url && !link.url.includes('decent') && !link.url.includes('mintsongs')) {
                 return (
                   <a key={index} href={link.url} target="_blank" rel="noopener noreferrer">
                     <img src={getImageFileName(link.platformId)} style={{ width: '50px', height: '50px' }} />
