@@ -13,7 +13,7 @@ const SoundXYZIframe: React.FC<SoundXYZIframeProps> = ({ src }) => {
         width="600px"
         height="200px"
         allow="clipboard-write"
-        sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"
+        sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox allow-same-origin"
       ></iframe>
     </div>
   );

@@ -3,22 +3,13 @@ import { Song } from './artist/types'; // Import the 'Song' interface
 import './index.css';
 
 interface GridItemProps extends Song { }
-/*  mainImage: string; // URL of the main image
-  smallImage1: string; // URL of the first small circular image
-  smallImage2: string; // URL of the second small circular image
-  label1: string;
-  label2: string;
-  label3: string;
-  label4: string;
-}*/
 
 function formatDate(date: string): string {
-  new Date(date).toLocaleDateString('en-US', {
+  return new Date(date).toLocaleDateString('en-US', {
     day: 'numeric',
     month: 'short',
     year: 'numeric'
   });
-  return date
 }
 
 const GridItem: React.FC<GridItemProps> = ({
