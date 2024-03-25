@@ -13,7 +13,7 @@ import './styles/GridStyles.css';
 import danc3Logo from './assets/danc3-logo.png';
 import tribesLogo from './assets/musictribes-tight.png';
 import { Song } from './artist/types';
-import tapeImage from './assets/casette.png';
+import tapeImage from './assets/casette-tight.png';
 
 const appStyle = {
   backgroundColor: '#000000', // Replace with your desired background color or image
@@ -93,7 +93,10 @@ function App() {
     <>
       <div className="image-container">
         <img src={danc3Logo} alt="Danc3" onClick={() => window.location.href = '/'}/>
-        <img src={tapeImage} alt="Danc3" style={{ width: '40px', height: '40px', margin: '20px'  }} onClick={() => window.location.href = '/'}/>
+        <div className='logo-casette'>
+          <img src={tapeImage} alt="Danc3" style={{ width: '40px', height: '26px', margin: '0 20px'  }} onClick={() => window.location.href = '/'}/>
+          <h1>x</h1>
+        </div>
         <img src={tribesLogo} alt="MT" onClick={() => window.location.href = '/'}/>
       </div>
       <div style={{padding: "20px"}}>
