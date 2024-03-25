@@ -8,7 +8,6 @@ import { mainnet } from 'wagmi/chains'; // add base
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ConnectKitProvider, getDefaultConfig, ConnectKitButton } from 'connectkit';
 import { Analytics } from "@vercel/analytics/react"
-import tapeImage from './assets/casette.png';
 
 const config = createConfig(
   getDefaultConfig({
@@ -128,7 +127,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <div style={{ marginLeft: '10px' }}>
               <ConnectKitButton />
             </div>
-            <img src={tapeImage} alt="Danc3" style={{ width: '60px', height: '60px' }} onClick={() => window.location.href = '/'}/>
           </div>
           <App />
           <Analytics />

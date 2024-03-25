@@ -13,6 +13,7 @@ import './styles/GridStyles.css';
 import danc3Logo from './assets/danc3-logo.png';
 import tribesLogo from './assets/musictribes-tight.png';
 import { Song } from './artist/types';
+import tapeImage from './assets/casette.png';
 
 const appStyle = {
   backgroundColor: '#000000', // Replace with your desired background color or image
@@ -91,9 +92,9 @@ function App() {
       <CssBaseline enableColorScheme />
     <>
       <div className="image-container">
-        <img src={danc3Logo} alt="Danc3" />
-        <h1>x</h1>
-        <img src={tribesLogo} alt="MT" />
+        <img src={danc3Logo} alt="Danc3" onClick={() => window.location.href = '/'}/>
+        <img src={tapeImage} alt="Danc3" style={{ width: '40px', height: '40px', margin: '20px'  }} onClick={() => window.location.href = '/'}/>
+        <img src={tribesLogo} alt="MT" onClick={() => window.location.href = '/'}/>
       </div>
       <div style={{padding: "20px"}}>
         <SoundXYZIframe src="https://embed.sound.xyz/v1/release/3853a5b1-5b5f-4390-82c6-1337924dbbab" />
