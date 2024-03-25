@@ -27,7 +27,7 @@ export const TimelineGrid = ({ events }: { events: SongData[] }) => {
     return (
         <div className="timeline-grid-container">
             {events.map(event => (
-              <TimelineGridItem {...event} />
+              <TimelineGridItem key={event.collectLink} {...event} />
   ))}
         </div>
     );
