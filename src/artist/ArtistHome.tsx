@@ -95,7 +95,6 @@ const ArtistHome: React.FC = () => {
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
           } else {
-            console.log(response);
             return response.json();
           }
         })
