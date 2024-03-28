@@ -140,7 +140,7 @@ function App() {
       <div className="button-container">
         <button className="button" style={{ width: '33%', backgroundColor: '#333'  }}>
           get FREE edition<br />
-          (booooring)
+          (boooring)
         </button>
         <button className="button" style={{ width: '33%', backgroundColor: appTheme.palette.primary.main }}>
           get SUPERFAN edition<br />
