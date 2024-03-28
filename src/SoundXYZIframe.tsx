@@ -1,4 +1,5 @@
 import React from 'react';
+import './SoundXYZIframe.css';
 
 interface SoundXYZIframeProps {
   src: string;
@@ -16,6 +17,7 @@ const SoundXYZIframe: React.FC<SoundXYZIframeProps> = ({ src }) => {
         sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox allow-same-origin"
       ></iframe>
     </div>
+
   );
 };
 

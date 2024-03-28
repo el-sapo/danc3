@@ -15,6 +15,10 @@ import { Song } from './artist/types';
 import tapeImage from './assets/casette-tight.png';
 import FuturetapeEmbed from './FuturetapeEmbed';
 
+import webIcon from './assets/web.png';
+import farcasterIcon from './assets/farcaster.png';
+import twitterIcon from './assets/x.png';
+
 const appStyle = {
   backgroundColor: '#000000',
   color: '#ffffff',
@@ -128,21 +132,48 @@ function App() {
       <CssBaseline enableColorScheme />
     <>
       <div className="image-container">
+        <div className="brand-container">
         <img src={danc3Logo} alt="Danc3" onClick={() => window.location.href = '/'}/>
+        <div className="icon-container">
+          <a href="https://danc3.musictribes.xyz/" target="_blank" rel="noopener noreferrer">
+            <img src={webIcon} alt="Web Icon" className="icon" style={{width: '40', height:'40', padding: '3px 0px'}}/>
+          </a>
+          <a href="https://twitter.com/_DANC3" target="_blank" rel="noopener noreferrer">
+            <img src={twitterIcon} alt="Twitter Icon" className="icon" style={{width: '40', height:'40', padding: '3px 20px'}}/>
+          </a>
+          <a href="https://warpcast.com/crittiep" target="_blank" rel="noopener noreferrer">
+            <img src={farcasterIcon} alt="Farcaster Icon" className="icon" style={{width: '40', height:'40', padding: '3px 0px'}}/>
+          </a>
+        </div>
+        </div>
         <div className='logo-casette'>
-          <img src={tapeImage} alt="Danc3" style={{ width: '40px', height: '26px', margin: '0 20px'  }} onClick={() => window.location.href = '/'}/>
           <h1>x</h1>
         </div>
+        <div className="brand-container">
         <img src={tribesLogo} alt="MT" onClick={() => window.location.href = '/'}/>
+        <div className="icon-container">
+          <a href="https://www.musictribes.xyz/" target="_blank" rel="noopener noreferrer">
+            <img src={webIcon} alt="Web Icon" className="icon" style={{width: '40', height:'40', padding: '3px 0px'}}/>
+          </a>
+          <a href="https://twitter.com/elsapo_eth" target="_blank" rel="noopener noreferrer">
+            <img src={twitterIcon} alt="Twitter Icon" className="icon" style={{width: '40', height:'40', padding: '3px 20px'}}/>
+          </a>
+          <a href="https://warpcast.com/xfede" target="_blank" rel="noopener noreferrer">
+            <img src={farcasterIcon} alt="Farcaster Icon" className="icon" style={{width: '40', height:'40', padding: '3px 0px'}}/>
+          </a>
+        </div>
+
+        </div>
+
       </div>
-        <FuturetapeEmbed />
+      <FuturetapeEmbed />
       <Countdown />
       <div className="button-container">
         <button className="button" style={{ backgroundColor: '#333'  }}>
           get FREE edition<br />
           (boooring)
         </button>
-        <button className="button" style={{ backgroundColor: appTheme.palette.primary.main }}>
+        <button className="button" style={{ backgroundColor: appTheme.palette.action.active }}>
           get SUPERFAN edition<br />
           (I ❤️ you)
         </button>

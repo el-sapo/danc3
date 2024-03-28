@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     width: auto;
-    margin: 30px 0;
+    margin: 30px;
     backdrop-filter: blur(5px);
     background-color: rgba(128, 128, 128, 0.2);
     overflow: hidden; /* Added */
@@ -13,6 +13,7 @@
 
   
   .futuretape-container {
+    border-radius: 8px;
     overflow: hidden;
     width: 230px; 
     height: 220px; 
@@ -20,6 +21,7 @@
 
   .futuretape-container iframe {
     border: 1px solid var(--primaryColor);
+    border-radius: 8px;
     width: 230px; 
     height: 220px; 
   }

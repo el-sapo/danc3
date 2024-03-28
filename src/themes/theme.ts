@@ -1,6 +1,8 @@
 //import { red } from "@mui/material/colors";
 import { createTheme } from "@mui/material/styles";
  
+
+
 export const appTheme = createTheme({
   palette: {
     primary: {
@@ -8,6 +10,12 @@ export const appTheme = createTheme({
     },
     secondary: {
       main: "#4D845D",
+    },
+    action: {
+      active: "#164849",
+      hover: "#4D845D",
+      selected: "#f5f5f5",
+      disabled: "#9e9e9e",
     },
     /*
     error: {
@@ -38,3 +46,6 @@ export const appTheme = createTheme({
     },*/
   },
 });
+
+// greem: #164849
+// grey: #8A9D9E

@@ -24,12 +24,12 @@
 }
 
 .song-info p {
-    font-family: 'Gotham-Light', sans-serif;
+    font-family: 'Gotham-Light', 'Lexend', sans-serif;
     margin: 0px;
 }
 
 .song-info h1 {
-    font-family: 'Gotham-Medium', sans-serif;
+    font-family: 'Gotham-Medium', 'Lexend', sans-serif;
     margin: 0px;
 }
 
