@@ -5,7 +5,6 @@ import { appTheme } from "./themes/theme";
 import { BrowserRouter as Router, Route, Link, Routes, useLocation } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group'
 
-import SoundXYZIframe from './SoundXYZIframe';
 import GridItem from './GridItem';
 import ArtistHome from './artist/ArtistHome'; // Adjust the path as necessary
 
@@ -14,17 +13,16 @@ import danc3Logo from './assets/danc3-logo.png';
 import tribesLogo from './assets/musictribes-tight.png';
 import { Song } from './artist/types';
 import tapeImage from './assets/casette-tight.png';
+import FuturetapeEmbed from './FuturetapeEmbed';
 
 const appStyle = {
-  backgroundColor: '#000000', // Replace with your desired background color or image
-  color: '#ffffff', // Replace with your text color
-  minHeight: '100vh', // Ensure it covers the full height of the viewport
-  // Add other styles as needed
+  backgroundColor: '#000000',
+  color: '#ffffff',
+  minHeight: '100vh', 
 };
 
 function GridAndRoutes() {
   const [items, setItems] = useState<Song[]>([]);
-//  const [selectedIndex, setSelectedIndex] = useState(null);
   const location = useLocation();
   const showGrid = location.pathname === "/";
   
@@ -82,6 +80,44 @@ function GridAndRoutes() {
   ); 
 }
 
+function Countdown() {
+  const [countdown, setCountdown] = useState({
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0
+  });
+
+  useEffect(() => {
+    const targetDate = new Date('2024-4-8');
+    const interval = setInterval(() => {
+      const now = new Date();
+      const timeDifference = targetDate.getTime() - now.getTime();
+
+      if (timeDifference > 0) {
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+        setCountdown({ days, hours, minutes, seconds });
+      } else {
+        clearInterval(interval);
+      }
+    }, 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  return (
+    <h1>
+      {countdown.days}d {countdown.hours}h {countdown.minutes}m {countdown.seconds}s
+    </h1>
+  );
+}
+
+
 function App() {
 
   return (
@@ -99,8 +135,20 @@ function App() {
         </div>
         <img src={tribesLogo} alt="MT" onClick={() => window.location.href = '/'}/>
       </div>
-      <div style={{padding: "20px"}}>
-        <SoundXYZIframe src="https://embed.sound.xyz/v1/release/3853a5b1-5b5f-4390-82c6-1337924dbbab" />
+        <FuturetapeEmbed />
+      <Countdown />
+      <div className="button-container">
+        <button className="button" style={{ width: '33%', backgroundColor: '#333'  }}>
+          get FREE edition<br />
+          (booooring)
+        </button>
+        <button className="button" style={{ width: '33%', backgroundColor: appTheme.palette.primary.main }}>
+          get SUPERFAN edition<br />
+          (I ❤️ you)
+        </button>
+        <button className="button" style={{ width: '33%' , backgroundColor: '#333' }}>
+          see on sound.xyz
+        </button>
       </div>
       <GridAndRoutes />
     </>

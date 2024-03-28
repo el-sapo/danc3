@@ -15,23 +15,24 @@
 }
 
 /* Add this to your global.css or a component-specific CSS file */
+.song-main-container {
+  display: "flex"; 
+  flex-direction:"column";
+  align-items: "flex-start";
+}
+
 .iframe-container {
   overflow: hidden;
 /*  padding-top: 50%; /* 16:9 Aspect Ratio */
-  max-width: 900px;   
-  width: 100%; 
-  height: 300px; 
-  position: relative;
+  width: 200px; 
+  height: 230px; 
   margin: 0 auto;
 }
 
 .iframe-container iframe {
-  border: none;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
+  border: 1px solid var(--primaryColor);
+  width: 200px; 
+  height: 230px; 
 }
 
 .grid-container {
@@ -76,6 +77,25 @@
 .image-container h1 {
   font-size: 16px;
   margin: 0 30px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.button-container button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: "gotham-medium", sans-serif;
+  cursor: pointer;
+  margin: 10px;
+  max-width: 300px;
+  color: white;
 }
 
 .fade-enter {
