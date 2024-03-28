@@ -1,5 +1,5 @@
 :root {
-  font-family: 'Gotham-Medium', sans-serif;
+  font-family: 'Gotham-Medium';
   line-height: 1.5;
   font-weight: 400;
 
@@ -38,11 +38,11 @@
 
 /* Then use the custom font in your classes */
 .label {
-  font-family: 'Gotham-Medium', sans-serif;
+  font-family: 'Gotham-Medium';
 }
 
 .comment {
-  font-family: 'Gotham-XLightItalic', sans-serif;
+  font-family: 'Gotham-XLightItalic';
   font-size: 12px;
 }
 
@@ -61,13 +61,13 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  font-family: 'Gotham-Medium', sans-serif; /* Example Font */
+  font-family: 'Gotham-Medium';
   color: var(--primary-color); /* Use a color variable */
   /* Define other base styles as needed */
   background-color: #000
 }
 h1 {
-  font-family: 'Gotham-Medium', sans-serif; /* Example Font */
+  font-family: 'Gotham-Medium'; /* Example Font */
   font-size: 3.2em;
   line-height: 1.1;
   margin: 5px;
@@ -75,7 +75,7 @@ h1 {
 }
 
 p {
-  font-family: 'Gotham-Light', sans-serif;
+  font-family: 'Gotham-Light';
   font-size: '12px';
   margin: 0px;
 }
@@ -86,7 +86,7 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: "gotham-medium", sans-serif;
+  font-family: "Gotham-Medium";
   background-color: #3498db;
   cursor: pointer;
   transition: border-color 0.25s;
