@@ -20,9 +20,9 @@ return (
         </div>
         <div className="labels-container">
             <h1 className="title" style={{textAlign: "left", color: appTheme.palette.primary.main }}>Love Me Mixtape</h1>
-            <div style={{display: 'inline-flex', justifyContent: 'left', alignItems: 'left'}}>
-            <img src={tapeImage} alt="Danc3" style={{ width: '40px', height: '26px', margin: '0 20px'  }} onClick={() => window.location.href = '/'}/>
-            <h1 className="subtitle" style={{textAlign: "right", fontSize: "30px" }}>by George Hooks</h1>
+            <div className='song-subtitleee' style={{display: 'inline-flex', justifyContent: 'left', alignItems: 'left'}}>
+            <img src={tapeImage} alt="Danc3" style={{ width: '40px', height: '100%', objectFit: 'scale-down', margin: '0px 8px'  }}/>
+            <h1 className="subtitle" style={{textAlign: "left", fontSize: "25px" }}>by George Hooks</h1>
             </div>
         </div>
     </div>
