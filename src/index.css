@@ -17,14 +17,14 @@
 
 @font-face {
   font-family: 'Gotham-Medium';
-  src: url('./Gotham-Medium.woff') format('woff');
+  src: url('./fonts/Gotham-Medium.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gotham-Light';
-  src: url('./Gotham-Light.woff') format('woff');
+  src: url('./fonts/Gotham-Light.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
