@@ -16,21 +16,21 @@
 }
 
 @font-face {
-  font-family: 'Gotham-Medium';
+  font-family: 'Gotham-Medium', 'Lexend';
   src: url('./fonts/Gotham-Medium.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gotham-Light';
+  font-family: 'Gotham-Light', 'Lexend';
   src: url('./fonts/Gotham-Light.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gotham-XLightItalic';
+  font-family: 'Gotham-XLightItalic', 'Lexend';
   src: url('./fonts/Gotham-XLightItalic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
