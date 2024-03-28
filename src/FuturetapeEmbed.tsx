@@ -9,7 +9,7 @@ return (
     <div className='song-main-container'>
         <div className="futuretape-container">
             <iframe src="https://futuretape.xyz/embed/token/0x559fb7d6080ac47a17b2fd23bd725023d5a802ec/1" 
-            width="200" 
+            width="220" 
             height="220"
             allowFullScreen={false} 
             allow="autoplay; clipboard-write;" 
