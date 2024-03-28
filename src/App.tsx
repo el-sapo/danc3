@@ -138,15 +138,15 @@ function App() {
         <FuturetapeEmbed />
       <Countdown />
       <div className="button-container">
-        <button className="button" style={{ width: '33%', backgroundColor: '#333'  }}>
+        <button className="button" style={{ backgroundColor: '#333'  }}>
           get FREE edition<br />
           (boooring)
         </button>
-        <button className="button" style={{ width: '33%', backgroundColor: appTheme.palette.primary.main }}>
+        <button className="button" style={{ backgroundColor: appTheme.palette.primary.main }}>
           get SUPERFAN edition<br />
           (I ❤️ you)
         </button>
-        <button className="button" style={{ width: '33%' , backgroundColor: '#333' }}>
+        <button className="button" style={{ backgroundColor: '#333' }}>
           see on sound.xyz
         </button>
       </div>

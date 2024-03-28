@@ -14,13 +14,13 @@
   
   .futuretape-container {
     overflow: hidden;
-    width: 220px; 
+    width: 230px; 
     height: 220px; 
   }
 
   .futuretape-container iframe {
     border: 1px solid var(--primaryColor);
-    width: 220px; 
+    width: 230px; 
     height: 220px; 
   }
 

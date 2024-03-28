@@ -97,6 +97,12 @@
   max-width: 300px;
   color: white;
   font-size: 18px;
+  width: 33%;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
 }
 
 .fade-enter {
@@ -147,9 +153,15 @@
     margin: 0 10px;
   }
   .button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(1fr, 3); 
+    gap: 5px; 
+    justify-content: center; 
+  }
+
+  .button-container button {
+    width: 100%;
+
   }
 }
