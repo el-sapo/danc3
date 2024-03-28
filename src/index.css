@@ -17,21 +17,21 @@
 
 @font-face {
   font-family: 'Gotham-Medium';
-  src: url('/fonts/Gotham-Medium.otf') format('otf');
+  src: url('./Gotham-Medium.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gotham-Light';
-  src: url('/fonts/Gotham-Light.otf') format('otf');
+  src: url('./Gotham-Light.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gotham-XLightItalic';
-  src: url('/fonts/Gotham-XLightItalic.otf') format('otf');
+  src: url('./fonts/Gotham-XLightItalic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }

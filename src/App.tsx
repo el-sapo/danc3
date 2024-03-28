@@ -111,7 +111,7 @@ function Countdown() {
   }, []);
 
   return (
-    <h1>
+    <h1 style={{fontSize: '40px'}}>
       {countdown.days}d {countdown.hours}h {countdown.minutes}m {countdown.seconds}s
     </h1>
   );
